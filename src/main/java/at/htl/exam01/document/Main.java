@@ -26,6 +26,10 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Document[] document = new Document[1000];
+        String[] liste = new String[1000];
+
+
+
         System.out.println("1: Buch");
         System.out.println("2: Email");
         System.out.println("3: Ausgabe");
@@ -56,6 +60,8 @@ public class Main {
 
 
     }
+
+
 
     class Document{
 
