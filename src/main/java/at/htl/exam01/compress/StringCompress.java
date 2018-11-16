@@ -8,16 +8,24 @@ public class StringCompress {
 
     private static final String FILE_NAME = "sample.txt";
 
+
     /**
      * Main-Methode, hier wird das StringCompress-Objekt erstellt
      * und die Methoden des Objekts werden aufgerufen
      *
      * @param args
      */
+
     public static void main(String[] args) {
         StringCompress sc = new StringCompress();
         String[] text = sc.readFromFile(FILE_NAME);
         sc.print(text);
+
+        String[] lines = readFromFile(FILE_NAME);
+
+        print(readFromFile(FILE_NAME));
+
+
     }
 
 
@@ -40,10 +48,22 @@ public class StringCompress {
      * @param fileName
      * @return String-Array mit dem entpacktem Text
      */
-    public String[] readFromFile(String fileName) {
+    public static String[] readFromFile(String fileName) {
+        int i = 0;
+        String[] liste = new String[getNoOfLines(fileName)];
 
+        try(Scanner scanner = new Scanner(new FileReader(fileName))){
+            while(scanner.hasNextLine()){
 
-        return null;
+                liste[i] = scanner.nextLine();
+                i ++;
+            }
+
+        } catch (FileNotFoundException e) {
+            System.err.println(e.getMessage());
+        }
+
+        return liste;
     }
 
 
@@ -53,8 +73,13 @@ public class StringCompress {
      *
      * @param lines String-Array
      */
-    public void print(String[] lines) {
+    public static void print(String[] lines) {
+        int i = 0;
+        while(i < getNoOfLines(FILE_NAME)){
 
+
+            System.out.println(readFromFile(FILE_NAME));
+        }
     }
 
     /**
@@ -63,9 +88,19 @@ public class StringCompress {
      * @param fileName
      * @return Anzahl der Zeilen in der Textdatei
      */
-    public int getNoOfLines(String fileName) {
+    public static int getNoOfLines(String fileName) {
+        int lines = 0;
+        try(Scanner scanner = new Scanner(new FileReader(fileName))){
 
+            while(scanner.hasNextLine()){
+                lines++;
+            }
 
-        return -1;
+        } catch (FileNotFoundException e) {
+            System.err.println(e.getMessage());
+        }
+
+        return lines;
+
     }
 }

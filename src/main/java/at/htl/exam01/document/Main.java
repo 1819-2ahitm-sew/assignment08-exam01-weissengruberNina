@@ -22,9 +22,16 @@ public class Main {
      * @param args
      */
     public static void main(String[] args) {
+        Document[] document = new Document[1000];
+        System.out.println("1: Buch");
+        System.out.println("2: Email");
+        System.out.println("3: Ausgabe");
+        System.out.println();
 
 
     }
+
+    class Document{}
 
 
 }
