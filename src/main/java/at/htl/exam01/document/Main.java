@@ -1,5 +1,7 @@
 package at.htl.exam01.document;
 
+import java.util.Scanner;
+
 public class Main {
 
     /**
@@ -22,16 +24,42 @@ public class Main {
      * @param args
      */
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         Document[] document = new Document[1000];
         System.out.println("1: Buch");
         System.out.println("2: Email");
         System.out.println("3: Ausgabe");
-        System.out.println();
+        System.out.println("4: Ende");
+
+        int eingabe = scanner.nextInt();
+
+        do{
+            switch (eingabe){
+                case 1:
+                    System.out.print("Title: ");
+                    String title = scanner.nextLine();
+                    return;
+                case 2:
+                    System.out.println("Subjekt: ");
+                    String subjekt = scanner.nextLine();
+                    System.out.println("To: ");
+                    String to = scanner.nextLine();
+                    return;
+                case 3:
+
+                    return;
+                case 4:
+                    return;
+            }
+        }
+        while (eingabe != 4);
 
 
     }
 
-    class Document{}
+    class Document{
+
+    }
 
 
 }

@@ -26,6 +26,9 @@ public class StringCompress {
         print(readFromFile(FILE_NAME));
 
 
+
+
+
     }
 
 
@@ -50,7 +53,7 @@ public class StringCompress {
      */
     public static String[] readFromFile(String fileName) {
         int i = 0;
-        String[] liste = new String[getNoOfLines(fileName)];
+        String[] liste = new String[5];
 
         try(Scanner scanner = new Scanner(new FileReader(fileName))){
             while(scanner.hasNextLine()){
